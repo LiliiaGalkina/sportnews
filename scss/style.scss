@@ -1,30 +1,47 @@
+//шрифты
 /* DM Sans */
 @font-face {
   font-family: "DM Sans";
   src: url("../fonts/DMSans-Regular.ttf") format("truetype");
   font-weight: 400;
 }
+
 @font-face {
   font-family: "DM Sans";
   src: url("../fonts/DMSans-Medium.ttf") format("truetype");
   font-weight: 500;
 }
+
 @font-face {
   font-family: "DM Sans";
   src: url("../fonts/DMSans-Bold.ttf") format("truetype");
   font-weight: 700;
 }
+
 /* TT Prosto Sans Trial */
 @font-face {
   font-family: "TT Prosto Sans";
   src: url("../fonts/TTProsto-Sans-Trial-Light.otf") format("opentype");
   font-weight: 300;
 }
+
 @font-face {
   font-family: "TT Prosto Sans";
   src: url("../fonts/TTProsto-Sans-Trial-Regular.otf") format("opentype");
   font-weight: 400;
 }
+
+//переменные
+$blackText: #262626;
+$whiteText: #ffffff;
+$lightWhiteText: #e1e8f0;
+$lightGreyText: #b8c2ce;
+$middleGreyText: #696868;
+$greyBackground: #EBEEF3;
+$lightGreyBackground: #BAB8B8;
+
+//миксины
+
 html {
   font-size: 16px;
 }
@@ -33,5 +50,5 @@ body {
   font-family: "DM Sans", sans-serif;
   font-size: 1rem;
   line-height: 1.24;
-  color: #262626;
+  color: $blackText;
 }
