@@ -41,14 +41,110 @@ $greyBackground: #EBEEF3;
 $lightGreyBackground: #BAB8B8;
 
 //миксины
+@mixin button($width, $height, $background, $color) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: $width;
+  height: $height;
+  background-color: $background;
+  color: $color;
+  border-radius: 0.6rem;
+} 
 
+
+//all styles
 html {
-  font-size: 16px;
+  font-size: 10px;
 }
 
 body {
   font-family: "DM Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 1.6rem;
   line-height: 1.24;
   color: $blackText;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 120rem;
+  padding: 0 1.5rem;
+}
+
+//header
+.header {
+  padding: 2.3rem 0 2.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    max-width: 15.4rem;
+    order: 1;
+    img {
+      width: 100%;
+    }
+  }
+
+  &__menu {
+    order: 2
+  }
+
+  &__button {
+    @include button(10rem, 3.5rem, $lightGreyText, $whiteText);
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    img {
+      width: 1.6rem;
+    }
+    span {
+      font-size: 1.4rem;
+      letter-spacing: 1%;
+    }
+  }
+}
+
+
+.menu {
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 1.9rem;
+  }
+
+  &__link {
+    font-size: 1.5rem;
+    line-height: 2.8;
+    color: $blackText;
+    opacity: 0.6;
+    transition: all 0.5s ease;
+    &:hover {
+      text-decoration: underline;
+    }
+    &_active {
+      font-weight: 700;
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    flex-wrap: wrap;
+    gap: 2rem;
+    &__menu {
+        flex: 0 1 100%;
+        order: 3;
+    }
+    &__button {
+      order: 2;
+    }
+  }
+  .menu {
+    &__list {
+      justify-content: space-between;
+    }
+  }
 }
