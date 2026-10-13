@@ -37,8 +37,8 @@ $whiteText: #ffffff;
 $lightWhiteText: #e1e8f0;
 $lightGreyText: #b8c2ce;
 $middleGreyText: #696868;
-$greyBackground: #EBEEF3;
-$lightGreyBackground: #BAB8B8;
+$greyBackground: #ebeef3;
+$lightGreyBackground: #bab8b8;
 
 //миксины
 @mixin button($width, $height, $background, $color) {
@@ -51,8 +51,7 @@ $lightGreyBackground: #BAB8B8;
   background-color: $background;
   color: $color;
   border-radius: 0.6rem;
-} 
-
+}
 
 //all styles
 html {
@@ -88,7 +87,7 @@ body {
   }
 
   &__menu {
-    order: 2
+    order: 2;
   }
 
   &__button {
@@ -106,7 +105,6 @@ body {
   }
 }
 
-
 .menu {
   &__list {
     display: flex;
@@ -123,7 +121,7 @@ body {
     &:hover {
       text-decoration: underline;
     }
-    &_active {
+    &_active-item {
       font-weight: 700;
       opacity: 1;
     }
@@ -135,15 +133,129 @@ body {
     flex-wrap: wrap;
     gap: 2rem;
     &__menu {
-        flex: 0 1 100%;
-        order: 3;
+      flex: 0 1 100%;
+      order: 3;
     }
-    &__button {
+    &__buttons {
       order: 2;
     }
   }
   .menu {
     &__list {
+      justify-content: space-between;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    &__buttons {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+  }
+  .menu {
+    &__list {
+      display: none;
+      &.active {
+        order: 3;
+        padding-top: 10rem;
+        display: block;
+        position: absolute;
+        z-index: 10;
+        display: block;
+        overflow: auto;
+        top: 0;
+        left: 0;
+        background-color: $blackText;
+        width: 100vw;
+        height: 100vh;
+        li {
+          margin: 0;
+          text-align: center;
+          &:not(:last-child) {
+            margin-bottom: 50px;
+          }
+          a {
+            color: $whiteText;
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+    &__burger {
+      position: relative;
+      display: block;
+      width: 3rem;
+      height: 2rem;
+      z-index: 15;
+      &::before,
+      &::after {
+        content: "";
+        background-color: $blackText;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        transition: all 0.3s ease 0s;
+      }
+      &::before {
+        top: 0;
+      }
+      &::after {
+        bottom: 0;
+      }
+      span {
+        position: absolute;
+        background-color: $blackText;
+        left: 0;
+        top: 9px;
+        width: 100%;
+        height: 2px;
+        transition: all 0.3s ease 0s;
+      }
+      &.active {
+        span {
+          transform: scale(0);
+        }
+        &::before {
+          background-color: $whiteText;
+          transform: rotate(45deg);
+          top: 0.8rem;
+          height: 0.4rem;
+        }
+        &::after {
+          background-color: $whiteText;
+          transform: rotate(-45deg);
+          bottom: 0.8rem;
+          height: 0.4rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    &__logo {
+      max-width: 12rem;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .header {
+    flex-wrap: wrap;
+    &__logo {
+      max-width: 100%;
+      flex: 0 1 100%;
+      img {
+        max-width: 12rem;
+      }
+    }
+    &__buttons {
+      width: 100%;
       justify-content: space-between;
     }
   }
