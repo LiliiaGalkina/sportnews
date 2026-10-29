@@ -18,17 +18,11 @@
   font-weight: 700;
 }
 
-/* TT Prosto Sans Trial */
+/* IBM Plex Serif */
 @font-face {
-  font-family: "TT Prosto Sans";
-  src: url("../fonts/TTProsto-Sans-Trial-Light.otf") format("opentype");
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: "TT Prosto Sans";
-  src: url("../fonts/TTProsto-Sans-Trial-Regular.otf") format("opentype");
-  font-weight: 400;
+  font-family: "IBM Plex Serif";
+  src: url("../fonts/IBMPlexSerif-Bold.ttf") format("truetype");
+  font-weight: 700;
 }
 
 //переменные
@@ -51,6 +45,27 @@ $lightGreyBackground: #bab8b8;
   background-color: $background;
   color: $color;
   border-radius: 0.6rem;
+}
+
+@mixin title-gradient($fontSize) {
+  font-family: "IBM Plex Serif", serif;
+  font-size: $fontSize;
+  line-height: 0.94;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $blackText;
+  background-image: linear-gradient(to bottom, $blackText, $lightGreyText);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin card-img {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+  }
 }
 
 //all styles
@@ -258,5 +273,105 @@ body {
       width: 100%;
       justify-content: space-between;
     }
+  }
+}
+
+//hero
+.hero {
+  padding: 9.2rem 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 2rem;
+  &__left {
+    padding-right: 10rem;
+    flex: 0 1 76%;
+    position: relative;
+    min-height: 68.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__right {
+    flex: 0 1 23%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+}
+
+.title {
+  @include title-gradient(8rem);
+  max-width: 47rem;
+}
+
+.info-link {
+  max-width: 36.5rem;
+  align-self: flex-end;
+  &__text {
+    margin-bottom: 2.4rem;
+    font-size: 1.8rem;
+  }
+  &__button {
+    @include button(28.5rem, 6.2rem, $blackText, $lightWhiteText);
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+}
+
+.title-fon {
+  position: absolute;
+  top: -5rem;
+  left: -7.8rem;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+.main-img {
+  position: absolute;
+  right: 0;
+  max-width: 72rem;
+}
+
+.right-hero {
+  &__title {
+    width: fit-content;
+    padding: 0.4rem 1.6rem;
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 500;
+    background-color: $lightWhiteText;
+    color: $lightGreyText;
+    border-radius: 0.3rem;
+  }
+}
+
+.card-hero {
+  @include card-img;
+  position: relative;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  color: $blackText;
+  transition: all 0.5s ease;
+
+  &__body {
+    position: absolute;
+    left: 1.8rem;
+    bottom: 1.2rem;
+    max-width: 20rem;
+  }
+
+  &__date {
+    margin-bottom: 0.4rem;
+    font-size: 1rem;
+    opacity: 0.6;
+  }
+
+  &__title {
+   font-weight: 500;
+  }
+
+  &:hover {
+    box-shadow: 0 0 1rem $middleGreyText;
   }
 }

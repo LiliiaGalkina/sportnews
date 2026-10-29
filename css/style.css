@@ -14,16 +14,11 @@
   src: url("../fonts/DMSans-Bold.ttf") format("truetype");
   font-weight: 700;
 }
-/* TT Prosto Sans Trial */
+/* IBM Plex Serif */
 @font-face {
-  font-family: "TT Prosto Sans";
-  src: url("../fonts/TTProsto-Sans-Trial-Light.otf") format("opentype");
-  font-weight: 300;
-}
-@font-face {
-  font-family: "TT Prosto Sans";
-  src: url("../fonts/TTProsto-Sans-Trial-Regular.otf") format("opentype");
-  font-weight: 400;
+  font-family: "IBM Plex Serif";
+  src: url("../fonts/IBMPlexSerif-Bold.ttf") format("truetype");
+  font-weight: 700;
 }
 html {
   font-size: 10px;
@@ -217,4 +212,117 @@ body {
     width: 100%;
     justify-content: space-between;
   }
+}
+.hero {
+  padding: 9.2rem 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 2rem;
+}
+.hero__left {
+  padding-right: 10rem;
+  flex: 0 1 76%;
+  position: relative;
+  min-height: 68.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.hero__right {
+  flex: 0 1 23%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.title {
+  font-family: "IBM Plex Serif", serif;
+  font-size: 8rem;
+  line-height: 0.94;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #262626;
+  background-image: linear-gradient(to bottom, #262626, #b8c2ce);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  max-width: 47rem;
+}
+
+.info-link {
+  max-width: 36.5rem;
+  align-self: flex-end;
+}
+.info-link__text {
+  margin-bottom: 2.4rem;
+  font-size: 1.8rem;
+}
+.info-link__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 28.5rem;
+  height: 6.2rem;
+  background-color: #262626;
+  color: #e1e8f0;
+  border-radius: 0.6rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.title-fon {
+  position: absolute;
+  top: -5rem;
+  left: -7.8rem;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+.main-img {
+  position: absolute;
+  right: 0;
+  max-width: 72rem;
+}
+
+.right-hero__title {
+  width: fit-content;
+  padding: 0.4rem 1.6rem;
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 500;
+  background-color: #e1e8f0;
+  color: #b8c2ce;
+  border-radius: 0.3rem;
+}
+
+.card-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+.card-hero {
+  position: relative;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  color: #262626;
+  transition: all 0.5s ease;
+}
+.card-hero__body {
+  position: absolute;
+  left: 1.8rem;
+  bottom: 1.2rem;
+  max-width: 20rem;
+}
+.card-hero__date {
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+  opacity: 0.6;
+}
+.card-hero__title {
+  font-weight: 500;
+}
+.card-hero:hover {
+  box-shadow: 0 0 1rem #696868;
 }
