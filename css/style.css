@@ -239,8 +239,7 @@ body {
   flex-direction: column;
   gap: 2.4rem;
 }
-
-.title {
+.hero__title {
   font-family: "IBM Plex Serif", serif;
   font-size: 8rem;
   line-height: 0.94;
@@ -253,11 +252,27 @@ body {
   -webkit-text-fill-color: transparent;
   max-width: 47rem;
 }
-
-.info-link {
+.hero__info-link {
   max-width: 36.5rem;
   align-self: flex-end;
 }
+.hero__title-fon {
+  position: absolute;
+  top: -5rem;
+  left: -7.8rem;
+  width: 50%;
+  width: clamp(14rem, 50%, 76rem);
+  z-index: -1;
+}
+.hero__main-img {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 79%;
+  width: clamp(22rem, 79%, 120rem);
+}
+
 .info-link__text {
   margin-bottom: 2.4rem;
   font-size: 1.8rem;
@@ -274,22 +289,6 @@ body {
   border-radius: 0.6rem;
   font-size: 2rem;
   text-transform: uppercase;
-}
-
-.title-fon {
-  position: absolute;
-  top: -5rem;
-  left: -7.8rem;
-  opacity: 0.8;
-  z-index: -1;
-}
-
-.main-img {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  max-width: 72rem;
 }
 
 .right-hero__title {
@@ -334,4 +333,162 @@ body {
 }
 .card-hero:hover {
   box-shadow: 0 0 1rem #696868;
+}
+
+@media (max-width: 1280px) {
+  .hero {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 9rem;
+  }
+  .hero__left {
+    flex: 0 1 100%;
+    padding-right: 0;
+  }
+  .hero__right {
+    flex: 0 1 100%;
+    flex-direction: row;
+  }
+  .card-hero {
+    width: 47%;
+  }
+}
+@media (max-width: 1024px) {
+  .hero__title {
+    font-family: "IBM Plex Serif", serif;
+    font-size: 6rem;
+    line-height: 0.94;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #262626;
+    background-image: linear-gradient(to bottom, #262626, #b8c2ce);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero__main-img {
+    width: 85%;
+    width: clamp(22rem, 85%, 120rem);
+  }
+  .hero__title-fon {
+    left: 0;
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    padding: 6rem 0 0;
+  }
+  .hero__title {
+    font-family: "IBM Plex Serif", serif;
+    font-size: 5rem;
+    line-height: 0.94;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #262626;
+    background-image: linear-gradient(to bottom, #262626, #b8c2ce);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero__title-fon {
+    width: 42%;
+    width: clamp(14rem, 42%, 76rem);
+  }
+  .hero__main-img {
+    width: 90%;
+    width: clamp(22rem, 90%, 120rem);
+  }
+}
+@media (max-width: 600px) {
+  .hero__right {
+    flex-wrap: wrap;
+  }
+  .hero__main-img {
+    width: 100%;
+    width: clamp(22rem, 100%, 120rem);
+  }
+  .right-hero__title {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .hero {
+    padding: 5rem 0 0;
+    gap: 7rem;
+  }
+  .hero__left {
+    min-height: 60rem;
+  }
+  .hero__title {
+    font-family: "IBM Plex Serif", serif;
+    font-size: 4rem;
+    line-height: 0.94;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #262626;
+    background-image: linear-gradient(to bottom, #262626, #b8c2ce);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    max-width: 36rem;
+  }
+  .hero__title-fon {
+    top: -4rem;
+    width: 50%;
+    width: clamp(14rem, 50%, 76rem);
+  }
+  .hero__main-img {
+    transform: translateY(-60%);
+  }
+  .hero__right {
+    flex-direction: column;
+  }
+  .card-hero {
+    width: 100%;
+  }
+}
+@media (max-width: 376px) {
+  .hero {
+    padding: 4rem 0 0;
+  }
+  .hero__left {
+    min-height: 50rem;
+  }
+  .hero__title {
+    font-family: "IBM Plex Serif", serif;
+    font-size: 3.2rem;
+    line-height: 0.94;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #262626;
+    background-image: linear-gradient(to bottom, #262626, #b8c2ce);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero__title-fon {
+    top: -3.5rem;
+  }
+  .hero__main-img {
+    transform: translateY(-70%);
+  }
+  .hero__info-link {
+    max-width: 26rem;
+    align-self: center;
+  }
+  .info-link__text {
+    font-size: 1.6rem;
+  }
+  .info-link__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 25rem;
+    height: 6rem;
+    background-color: #262626;
+    color: #e1e8f0;
+    border-radius: 0.6rem;
+    font-size: 1.8rem;
+  }
 }

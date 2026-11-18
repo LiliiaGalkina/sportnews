@@ -298,6 +298,7 @@ body {
   justify-content: space-between;
   align-items: start;
   gap: 2rem;
+
   &__left {
     padding-right: 10rem;
     flex: 0 1 76%;
@@ -313,16 +314,33 @@ body {
     flex-direction: column;
     gap: 2.4rem;
   }
-}
-
-.title {
-  @include title-gradient(8rem);
-  max-width: 47rem;
+  &__title {
+    @include title-gradient(8rem);
+    max-width: 47rem;
+  }
+  &__info-link {
+    max-width: 36.5rem;
+    align-self: flex-end;
+  }
+  &__title-fon {
+    position: absolute;
+    top: -5rem;
+    left: -7.8rem;
+    width: 50%;
+    width: clamp(14rem, 50%, 76rem);
+    z-index: -1;
+  }
+  &__main-img {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 79%;
+    width: clamp(22rem, 79%, 120rem);
+  }
 }
 
 .info-link {
-  max-width: 36.5rem;
-  align-self: flex-end;
   &__text {
     margin-bottom: 2.4rem;
     font-size: 1.8rem;
@@ -332,22 +350,6 @@ body {
     font-size: 2rem;
     text-transform: uppercase;
   }
-}
-
-.title-fon {
-  position: absolute;
-  top: -5rem;
-  left: -7.8rem;
-  opacity: 0.8;
-  z-index: -1;
-}
-
-.main-img {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  max-width: 72rem;
 }
 
 .right-hero {
@@ -390,5 +392,134 @@ body {
 
   &:hover {
     box-shadow: 0 0 1rem $middleGreyText;
+  }
+}
+
+@media (max-width: 1280px) {
+  .hero {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 9rem;
+
+    &__left {
+      flex: 0 1 100%;
+      padding-right: 0;
+    }
+
+    &__right {
+      flex: 0 1 100%;
+      flex-direction: row;
+    }
+  }
+  .card-hero {
+    width: 47%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    &__title {
+      @include title-gradient(6rem);
+    }
+    &__main-img {
+      width: 85%;
+      width: clamp(22rem, 85%, 120rem);
+    }
+    &__title-fon {
+      left: 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 6rem 0 0;
+    &__title {
+      @include title-gradient(5rem);
+    }
+    &__title-fon {
+      width: 42%;
+      width: clamp(14rem, 42%, 76rem);
+    }
+    &__main-img {
+      width: 90%;
+      width: clamp(22rem, 90%, 120rem);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    &__right {
+      flex-wrap: wrap;
+    }
+    &__main-img {
+      width: 100%;
+      width: clamp(22rem, 100%, 120rem);
+    }
+  }
+  .right-hero {
+    &__title {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 5rem 0 0;
+    gap: 7rem;
+    &__left {
+      min-height: 60rem;
+    }
+    &__title {
+      @include title-gradient(4rem);
+      max-width: 36rem;
+    }
+    &__title-fon {
+      top: -4rem;
+      width: 50%;
+      width: clamp(14rem, 50%, 76rem);
+    }
+    &__main-img {
+      transform: translateY(-60%);
+    }
+    &__right {
+      flex-direction: column;
+    }
+  }
+  .card-hero {
+    width: 100%;
+  }
+}
+
+@media (max-width: 376px) {
+  .hero {
+    padding: 4rem 0 0;
+    &__left {
+      min-height: 50rem;
+    }
+    &__title {
+      @include title-gradient(3.2rem);
+    }
+    &__title-fon {
+      top: -3.5rem;
+    }
+    &__main-img {
+      transform: translateY(-70%);
+    }
+    &__info-link {
+      max-width: 26rem;
+      align-self: center;
+    }
+  }
+  .info-link {
+    &__text {
+      font-size: 1.6rem;
+    }
+    &__button {
+      @include button(25rem, 6rem, $blackText, $lightWhiteText);
+      font-size: 1.8rem;
+    }
   }
 }
