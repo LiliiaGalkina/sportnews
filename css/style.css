@@ -232,6 +232,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  isolation: isolate;
 }
 .hero__right {
   flex: 0 1 23%;
@@ -315,7 +316,7 @@ body {
   border-radius: 0.6rem;
   overflow: hidden;
   color: #262626;
-  transition: all 0.5s ease;
+  transition: box-shadow 0.5s ease;
 }
 .card-hero__body {
   position: absolute;
