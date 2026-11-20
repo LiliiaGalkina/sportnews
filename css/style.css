@@ -41,6 +41,13 @@ body {
   padding: 0 1.5rem;
 }
 
+.section-title {
+  margin-bottom: 1.6rem;
+  font-family: "IBM Plex Serif", serif;
+  font-size: 2.8rem;
+  line-height: 135%;
+}
+
 .header {
   padding: 2.3rem 0 2.7rem;
   display: flex;
@@ -506,13 +513,6 @@ body {
   gap: 3rem;
 }
 
-.section-title {
-  margin-bottom: 1.6rem;
-  font-family: "IBM Plex Serif", serif;
-  font-size: 2.8rem;
-  line-height: 135%;
-}
-
 .category-card {
   display: flex;
   flex-direction: column;
@@ -583,4 +583,125 @@ body {
   .category-card__img {
     order: 2;
   }
+}
+.trending {
+  display: flex;
+  border-radius: 0.6rem;
+  overflow: hidden;
+}
+.trending__content {
+  width: 50%;
+  padding: 3.6rem;
+  background-color: #ebeef3;
+  border-radius: 0.6rem;
+}
+.trending__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.trending__card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.trending__img {
+  width: 50%;
+}
+
+.card-trending__img {
+  width: 40%;
+}
+.card-trending__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card-trending__info {
+  width: 60%;
+  color: #262626;
+}
+.card-trending__date {
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+  line-height: 100%;
+  font-weight: 500;
+  opacity: 0.6;
+}
+.card-trending__title {
+  margin-bottom: 1.2rem;
+  font-family: "IBM Plex Serif", serif;
+  font-size: 1.8rem;
+  line-height: 135%;
+}
+.card-trending__text {
+  font-size: 1.2rem;
+  line-height: 124%;
+  opacity: 0.6;
+}
+
+.img-trending {
+  overflow: hidden;
+}
+.img-trending img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.6;
+}
+.img-trending {
+  height: 100%;
+  position: relative;
+}
+.img-trending::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.img-trending__img {
+  opacity: 1;
+}
+.img-trending__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 10.77rem;
+  height: 3.61rem;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 0.6rem;
+  position: absolute;
+  top: 3rem;
+  left: 3.6rem;
+  z-index: 3;
+  font-size: 2rem;
+  line-height: 100%;
+  border: 0.1rem solid #ebeef3;
+}
+.img-trending__body {
+  position: absolute;
+  bottom: 3rem;
+  left: 3.6rem;
+  z-index: 4;
+  color: #ffffff;
+}
+.img-trending__date {
+  margin-bottom: 1.4rem;
+  font-size: 1.8rem;
+  line-height: 100%;
+}
+.img-trending__title {
+  font-family: "IBM Plex Serif", serif;
+  font-size: 3.6rem;
+  line-height: 119%;
+  font-weight: 700;
+  color: #ffffff;
 }
