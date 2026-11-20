@@ -600,17 +600,17 @@ body {
   flex-direction: column;
   gap: 2rem;
 }
-.trending__card {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
 .trending__img {
   width: 50%;
 }
 
+.card-trending {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
 .card-trending__img {
-  width: 40%;
+  flex: 0 0 40%;
 }
 .card-trending__img img {
   width: 100%;
@@ -619,7 +619,7 @@ body {
      object-fit: cover;
 }
 .card-trending__info {
-  width: 60%;
+  flex: 1;
   color: #262626;
 }
 .card-trending__date {
@@ -642,31 +642,11 @@ body {
 }
 
 .img-trending {
-  overflow: hidden;
-}
-.img-trending img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  opacity: 0.6;
-}
-.img-trending {
-  height: 100%;
-  position: relative;
-}
-.img-trending::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.4);
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-}
-.img-trending__img {
-  opacity: 1;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/trendingnews/fon-sportsman.png") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem 3.6rem;
 }
 .img-trending__button {
   display: flex;
@@ -678,19 +658,11 @@ body {
   background-color: transparent;
   color: #fff;
   border-radius: 0.6rem;
-  position: absolute;
-  top: 3rem;
-  left: 3.6rem;
-  z-index: 3;
   font-size: 2rem;
   line-height: 100%;
   border: 0.1rem solid #ebeef3;
 }
 .img-trending__body {
-  position: absolute;
-  bottom: 3rem;
-  left: 3.6rem;
-  z-index: 4;
   color: #ffffff;
 }
 .img-trending__date {
@@ -704,4 +676,93 @@ body {
   line-height: 119%;
   font-weight: 700;
   color: #ffffff;
+}
+
+@media (max-width: 1200px) {
+  .trending__content {
+    width: 60%;
+    padding: 2rem;
+  }
+  .img-trending {
+    padding: 2rem;
+  }
+  .img-trending__date {
+    margin-bottom: 1.2rem;
+    font-size: 1.6rem;
+  }
+  .img-trending__title {
+    font-family: "IBM Plex Serif", serif;
+    font-size: 2.8rem;
+    line-height: 119%;
+    font-weight: 700;
+    color: #ffffff;
+  }
+}
+@media (max-width: 1024px) {
+  .card-trending {
+    gap: 1rem;
+  }
+  .card-trending__img {
+    flex: 0 0 35%;
+  }
+  .card-trending__title {
+    margin-bottom: 1rem;
+    font-family: "IBM Plex Serif", serif;
+    font-size: 1.4rem;
+    line-height: 135%;
+  }
+  .img-trending__date {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+  }
+  .img-trending__title {
+    font-family: "IBM Plex Serif", serif;
+    font-size: 2.4rem;
+    line-height: 119%;
+    font-weight: 700;
+    color: #ffffff;
+  }
+}
+@media (max-width: 768px) {
+  .trending {
+    flex-direction: column;
+  }
+  .trending__content {
+    width: 100%;
+  }
+  .trending__img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background-position: top;
+  }
+}
+@media (max-width: 550px) {
+  .card-trending__img {
+    flex: 0 0 40%;
+    aspect-ratio: 4/3;
+  }
+}
+@media (max-width: 480px) {
+  .card-trending__img {
+    aspect-ratio: 1/1;
+  }
+}
+@media (max-width: 420px) {
+  .trending__img {
+    aspect-ratio: 10/14;
+  }
+  .card-trending {
+    flex-direction: column;
+  }
+  .card-trending__img {
+    width: 100%;
+    aspect-ratio: auto;
+  }
+  .img-trending__title {
+    font-family: "IBM Plex Serif", serif;
+    font-size: 2rem;
+    line-height: 119%;
+    font-weight: 700;
+    color: #ffffff;
+  }
 }
