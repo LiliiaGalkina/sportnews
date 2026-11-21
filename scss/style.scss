@@ -638,11 +638,6 @@ body {
     gap: 2rem;
   }
 
-  // .trending__card
-
-  &__card {
-  }
-
   // .trending__img
 
   &__img {
@@ -799,29 +794,298 @@ body {
 }
 
 @media (max-width: 480px) {
-	.card-trending {
-		&__img {
-			aspect-ratio: 1 / 1;
-		}
-	}
+  .card-trending {
+    &__img {
+      aspect-ratio: 1 / 1;
+    }
+  }
 }
 
 @media (max-width: 420px) {
-	.trending {
-		&__img {
-			aspect-ratio: 10 /14;
-		}
+  .trending {
+    &__img {
+      aspect-ratio: 10 /14;
+    }
+  }
+  .card-trending {
+    flex-direction: column;
+    &__img {
+      width: 100%;
+      aspect-ratio: auto;
+    }
+  }
+  .img-trending {
+    &__title {
+      @include banner-title(2rem);
+    }
+  }
+}
+
+//first-slider
+.first-slider {
+  padding: 8rem 0;
+}
+
+.slider-football {
+  position: relative;
+  .slick-slider {
+    float: none;
+    height: auto;
+  }
+}
+
+.item-slider-football {
+  position: relative;
+  border-radius: 0.6rem;
+  height: 51.8rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  // .item-slider-football__link
+
+  &__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  // .item-slider-football__img
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  // .item-slider-football__button
+
+  &__button {
+    @include button(10.77rem, 3.61rem, transparent, #fff);
+    position: absolute;
+    top: 3.1rem;
+    left: 4.8rem;
+    font-size: 2rem;
+    line-height: 100%;
+    border: 0.1rem solid $greyBackground;
+    z-index: 2;
+  }
+
+  // .item-slider-football__body
+
+  &__body {
+    max-width: 76rem;
+    position: absolute;
+    bottom: 4.5rem;
+    left: 4.8rem;
+    z-index: 2;
+    color: $whiteText;
+  }
+
+  // .item-slider-football__info
+
+  &__info {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    line-height: 101%;
+  }
+
+  // .item-slider-football__title
+
+  &__title {
+    @include banner-title();
+    margin-bottom: 1rem;
+  }
+
+  // .item-slider-football__text
+
+  &__text {
+    font-size: 2rem;
+    line-height: 140%;
+  }
+}
+
+.slick-track {
+  display: flex;
+}
+
+.slick-list {
+  overflow: hidden;
+}
+
+.slider-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+  margin-top: 2.5rem;
+
+  .slider-control__prev {
+    order: 1;
+  }
+
+  .slick-dots {
+    order: 2;
+  }
+
+  .slider-control__next {
+    order: 3;
+  }
+}
+
+.slider-control {
+  width: 7rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  border: none;
+  cursor: pointer;
+  background-color: $blackText;
+  color: $whiteText;
+  border-radius: 0.3rem;
+
+  &__prev,
+  &__next {
+    transition: background-color 0.5s ease;
+  }
+
+  &__prev:not(.slick-disabled):hover,
+  &__next:not(.slick-disabled):hover {
+    background-color: $middleGreyText;
+  }
+
+  &.slick-disabled {
+    opacity: 0.4;
+  }
+}
+
+.slick-dots {
+  display: flex !important;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  transition:
+    color 0.5s ease,
+    transform 0.5s ease,
+    background-color 0.5s ease;
+}
+
+.slick-dots li button {
+  font-size: 2rem;
+  line-height: 1;
+  border: 0;
+  background: transparent;
+  color: $blackText;
+  cursor: pointer;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick-dots li.slick-active button {
+  background: $blackText;
+  color: $whiteText;
+}
+
+.slick-dots li:not(.slick-active) button:hover {
+  background-color: $middleGreyText;
+  color: $whiteText;
+  transform: scale(1.15);
+}
+
+@media (max-width: 1024px) {
+  .item-slider-football {
+    &__button {
+      left: 2rem;
+    }
+    &__body {
+      bottom: 2rem;
+      left: 2rem;
+      padding-right: 1rem;
+    }
+    &__info {
+      font-size: 1.6rem;
+    }
+    &__title {
+      @include banner-title(3rem);
+    }
+    &__text {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .item-slider-football {
+	  height: 42rem;
+    &__button {
+		top: 2rem;
+      left: 1rem;
+    }
+    &__body {
+      left: 1rem;
+    }
+    &__title {
+      @include banner-title(2.6rem);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+	.item-slider-football {
+		height: 38rem;
 	}
-	.card-trending {
-		flex-direction: column;
-		&__img {
-			width: 100%;
-			aspect-ratio: auto;
-		}
-	}
-	.img-trending {
+}
+
+@media (max-width: 480px) {
+	.item-slider-football {
+		height: 34rem;
 		&__title {
-			 @include banner-title(2rem);
+			@include banner-title(2.4rem);
+		}
+		&__text {
+			font-size: 1.6rem;
+		}
+	}
+	.slider-nav {
+		justify-content: space-between;
+	}
+}
+
+@media (max-width: 375px) {
+	.item-slider-football {
+		height: 28rem;
+
+		&__button {
+			top: 1rem;
+		}
+		&__body {
+			bottom: 1rem;
+		}
+		&__info {
+			font-size: 1.2rem;
+		}
+		&__title {
+			@include banner-title(1.8rem);
+		}
+		&__text {
+			font-size: 1.4rem;
 		}
 	}
 }
