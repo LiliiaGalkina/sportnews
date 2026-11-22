@@ -1033,9 +1033,9 @@ body {
 
 @media (max-width: 768px) {
   .item-slider-football {
-	  height: 42rem;
+    height: 42rem;
     &__button {
-		top: 2rem;
+      top: 2rem;
       left: 1rem;
     }
     &__body {
@@ -1048,44 +1048,313 @@ body {
 }
 
 @media (max-width: 600px) {
-	.item-slider-football {
-		height: 38rem;
-	}
+  .item-slider-football {
+    height: 38rem;
+  }
 }
 
 @media (max-width: 480px) {
-	.item-slider-football {
-		height: 34rem;
-		&__title {
-			@include banner-title(2.4rem);
-		}
-		&__text {
-			font-size: 1.6rem;
-		}
-	}
-	.slider-nav {
-		justify-content: space-between;
-	}
+  .item-slider-football {
+    height: 34rem;
+    &__title {
+      @include banner-title(2.4rem);
+    }
+    &__text {
+      font-size: 1.6rem;
+    }
+  }
+  .slider-nav {
+    justify-content: space-between;
+  }
 }
 
 @media (max-width: 375px) {
-	.item-slider-football {
-		height: 28rem;
+  .item-slider-football {
+    height: 28rem;
 
-		&__button {
-			top: 1rem;
-		}
-		&__body {
-			bottom: 1rem;
-		}
-		&__info {
-			font-size: 1.2rem;
-		}
-		&__title {
-			@include banner-title(1.8rem);
-		}
-		&__text {
-			font-size: 1.4rem;
-		}
+    &__button {
+      top: 1rem;
+    }
+    &__body {
+      bottom: 1rem;
+    }
+    &__info {
+      font-size: 1.2rem;
+    }
+    &__title {
+      @include banner-title(1.8rem);
+    }
+    &__text {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+//news
+.news {
+  padding-bottom: 7.2rem;
+  // .news__items
+
+  &__items {
+    display: grid;
+    grid-template-columns: 23% 24% 49%;
+    gap: 1.6rem 3rem;
+  }
+
+  &__title {
+    @include section-title(2.8rem, 0);
+  }
+}
+.recent {
+  min-height: 100%;
+  background-image: url("../img/recentnews/karate-fighters.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.5s ease;
+  &:hover {
+	box-shadow: 0 0 1rem $blackText;
+  }
+
+  // .recent__info
+
+  &__info {
+    width: 100%;
+    padding: 1.6rem 1.8rem;
+    color: $greyBackground;
+    background: linear-gradient(to right, #b2906e, #e4c599);
+  }
+}
+
+.info-recent {
+  // .info-recent__date
+  &__date {
+    margin-bottom: 0.4rem;
+    font-size: 1rem;
+    line-height: 101%;
+    font-weight: 500;
+  }
+
+  // .info-recent__title
+
+  &__title {
+    @include section-title(1.6rem, 0);
+  }
+}
+
+.news-cards {
+  padding: 1.4rem 1rem;
+  background-color: $greyBackground;
+  border-radius: 0.6rem;
+  overflow: hidden;
+
+  // .news-cards__items
+
+  &__items {
+    margin-bottom: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  // .news-cards__button
+
+  &__button {
+    @include button(8rem, 2.8rem, $lightGreyText, $whiteText);
+    margin: 0 auto;
+	transition: transform 0.5s ease;
+	&:hover {
+		transform: translateY(0.1rem);
 	}
+  }
+}
+
+.item-news {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: box-shadow 0.5s ease;
+  &:hover {
+	box-shadow: 0 0 1rem $blackText;
+  }
+  // .item-news__img
+
+  &__img {
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+  }
+}
+.clubs-ranking {
+  padding: 1.9rem 3rem;
+  background-color: $greyBackground;
+  border-radius: 0.6rem;
+  overflow: hidden;
+
+  // .clubs-ranking__table
+
+  &__table {
+    width: 100%;
+    height: 100%;
+  }
+}
+.table-ranking {
+  // .table-ranking__row
+
+  &__row:last-child {
+    .table-ranking__col {
+      border-bottom: none;
+    }
+  }
+
+  // .table-ranking__headline
+
+  &__headline {
+    @include section-title(1.6rem, 0);
+    text-transform: uppercase;
+    text-align: center;
+    &_first {
+      text-transform: none;
+      text-align: left;
+    }
+  }
+
+  // .table-ranking__col
+
+  &__col {
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 0.1rem solid $lightGreyText;
+
+    // .table-ranking__col_big
+
+    &_big {
+      @include section-title(1.3rem, 0);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .news {
+    &__items {
+      grid-template-columns: 23% 26% 49%;
+      gap: 1.6rem 2rem;
+    }
+  }
+  .info-recent {
+    &__title {
+      @include section-title(1.4rem, 0);
+    }
+  }
+  .clubs-ranking {
+    padding: 1.4rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .news {
+    &__items {
+      grid-template-columns: 49% 49%;
+      gap: 1.6rem 3rem;
+    }
+    &__title_last {
+      grid-column: 1/3;
+      grid-row: 3/3;
+    }
+  }
+  .clubs-ranking {
+    grid-column: 1/3;
+    aspect-ratio: 12/5;
+  }
+  .recent {
+    background-position: center;
+  }
+  .info-recent {
+    &__title {
+      @include section-title(1.6rem, 0);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .news {
+    &__items {
+      gap: 1.6rem 2rem;
+    }
+  }
+  .info-recent {
+    &__title {
+      @include section-title(1.4rem, 0);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .news {
+    &__items {
+      grid-template-columns: 1fr;
+      gap: 1.6rem 0;
+    }
+  }
+  .recent {
+    grid-row: 2 /3;
+    aspect-ratio: 15/16;
+  }
+  .empty-title {
+    display: none;
+  }
+  .news-cards {
+    grid-row: 3/4;
+  }
+  .news__title_last {
+    grid-row: 4/5;
+  }
+  .clubs-ranking {
+    aspect-ratio: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .table-ranking {
+    &__headline {
+      @include section-title(1.4rem, 0);
+    }
+    &__col_big {
+      @include section-title(1.2rem, 0);
+    }
+    &__col {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .info-recent {
+    &__title {
+      @include section-title(1.2rem, 0);
+    }
+  }
+  .clubs-ranking {
+    padding: 1rem;
+  }
+  .table-ranking {
+    &__col-img {
+      display: none;
+    }
+    &__col_big {
+      @include section-title(1.1rem, 0);
+      line-height: 110%;
+      text-align: left;
+    }
+  }
 }
