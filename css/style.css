@@ -629,7 +629,7 @@ body {
   font-weight: 500;
   opacity: 0.6;
 }
-.card-trending__title {
+.card-trending__title, .content-article__title {
   margin-bottom: 1.2rem;
   font-family: "IBM Plex Serif", serif;
   font-size: 1.8rem;
@@ -705,7 +705,7 @@ body {
   .card-trending__img {
     flex: 0 0 35%;
   }
-  .card-trending__title {
+  .card-trending__title, .content-article__title {
     margin-bottom: 1rem;
     font-family: "IBM Plex Serif", serif;
     font-size: 1.4rem;
@@ -895,6 +895,7 @@ body {
 }
 .slider-control.slick-disabled {
   opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .slick-dots {
@@ -1270,4 +1271,87 @@ body {
     line-height: 110%;
     text-align: left;
   }
+}
+.slider-articles .slick-track {
+  display: flex;
+  gap: 3rem;
+}
+.slider-articles .slick-list {
+  margin-right: -3rem;
+}
+.item-slider-articles {
+  cursor: pointer;
+  border-radius: 0.6rem;
+  transition: transform 0.5s ease;
+}
+.item-slider-articles:hover {
+  transform: translateY(0.2rem);
+}
+.item-slider-articles__img {
+  position: relative;
+  margin-bottom: 2.8rem;
+}
+.item-slider-articles__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.item-slider-articles__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 7.6rem;
+  height: 2.8rem;
+  background-color: transparent;
+  color: #ebeef3;
+  border-radius: 0.6rem;
+  position: absolute;
+  top: 1.4rem;
+  right: 1.4rem;
+  border: 0.1rem solid #ebeef3;
+}
+.content-article__autor {
+  margin-bottom: 2rem;
+}
+.content-article__info {
+  margin-bottom: 1.8rem;
+  font-size: 1.4rem;
+  line-height: 100%;
+  font-weight: 500;
+  opacity: 0.6;
+}
+.content-article__title {
+  font-size: 2rem;
+}
+.content-article__text {
+  font-size: 1.6rem;
+  line-height: 124%;
+  font-weight: 500;
+  color: #696868;
+}
+
+.autor-article {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+.autor-article__foto {
+  max-width: 4.4rem;
+}
+.autor-article__name {
+  font-size: 1.4rem;
+  line-height: 100%;
+  font-weight: 500;
+  letter-spacing: 0.01rem;
+  color: #3e3232;
+}
+
+.slider-nav2 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin-top: 2.5rem;
 }
