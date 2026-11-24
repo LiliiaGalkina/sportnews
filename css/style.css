@@ -629,7 +629,7 @@ body {
   font-weight: 500;
   opacity: 0.6;
 }
-.card-trending__title, .content-article__title {
+.card-trending__title {
   margin-bottom: 1.2rem;
   font-family: "IBM Plex Serif", serif;
   font-size: 1.8rem;
@@ -705,7 +705,7 @@ body {
   .card-trending__img {
     flex: 0 0 35%;
   }
-  .card-trending__title, .content-article__title {
+  .card-trending__title {
     margin-bottom: 1rem;
     font-family: "IBM Plex Serif", serif;
     font-size: 1.4rem;
@@ -1028,7 +1028,7 @@ body {
 }
 .news__items {
   display: grid;
-  grid-template-columns: 23% 24% 49%;
+  grid-template-columns: 23% 24% 1fr;
   gap: 1.6rem 3rem;
 }
 .news__title {
@@ -1164,7 +1164,7 @@ body {
 
 @media (max-width: 1280px) {
   .news__items {
-    grid-template-columns: 23% 26% 49%;
+    grid-template-columns: 23% 26% 1fr;
     gap: 1.6rem 2rem;
   }
   .info-recent__title {
@@ -1179,7 +1179,7 @@ body {
 }
 @media (max-width: 1024px) {
   .news__items {
-    grid-template-columns: 49% 49%;
+    grid-template-columns: 1fr 1fr;
     gap: 1.6rem 3rem;
   }
   .news__title_last {
@@ -1272,14 +1272,28 @@ body {
     text-align: left;
   }
 }
+.second-slider {
+  margin-bottom: 8rem;
+}
+
 .slider-articles .slick-track {
-  display: flex;
-  gap: 3rem;
+  display: grid;
+  width: 100% !important;
+  grid-auto-flow: column;
+  grid-auto-columns: 33.3333333333%;
 }
 .slider-articles .slick-list {
-  margin-right: -3rem;
+  margin: 0 -1.5rem;
 }
+.slider-articles .slick-slide {
+  padding: 0 1.5rem;
+}
+
 .item-slider-articles {
+  display: grid;
+  grid-row: span 5;
+  grid-template-rows: subgrid;
+  gap: 2rem;
   cursor: pointer;
   border-radius: 0.6rem;
   transition: transform 0.5s ease;
@@ -1289,7 +1303,6 @@ body {
 }
 .item-slider-articles__img {
   position: relative;
-  margin-bottom: 2.8rem;
 }
 .item-slider-articles__img img {
   width: 100%;
@@ -1312,20 +1325,19 @@ body {
   right: 1.4rem;
   border: 0.1rem solid #ebeef3;
 }
-.content-article__autor {
-  margin-bottom: 2rem;
-}
-.content-article__info {
-  margin-bottom: 1.8rem;
+.item-slider-articles__info {
   font-size: 1.4rem;
   line-height: 100%;
   font-weight: 500;
   opacity: 0.6;
 }
-.content-article__title {
+.item-slider-articles__title {
+  margin-bottom: 0;
+  font-family: "IBM Plex Serif", serif;
   font-size: 2rem;
+  line-height: 135%;
 }
-.content-article__text {
+.item-slider-articles__text {
   font-size: 1.6rem;
   line-height: 124%;
   font-weight: 500;
@@ -1354,4 +1366,23 @@ body {
   justify-content: flex-start;
   gap: 2rem;
   margin-top: 2.5rem;
+}
+
+@media (max-width: 1024px) {
+  .item-slider-articles__title {
+    margin-bottom: 0;
+    font-family: "IBM Plex Serif", serif;
+    font-size: 1.8rem;
+    line-height: 135%;
+  }
+}
+@media (max-width: 768px) {
+  .slider-articles .slick-track {
+    grid-auto-columns: 50%;
+  }
+}
+@media (max-width: 541px) {
+  .slider-articles .slick-track {
+    grid-auto-columns: 100%;
+  }
 }

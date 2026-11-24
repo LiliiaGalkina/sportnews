@@ -47,9 +47,15 @@ $(document).ready(function () {
     appendArrows: ".slider-nav2",
     responsive: [
       {
-        breakpoint: 481,
+        breakpoint: 769,
         settings: {
-          dots: false,
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 541,
+        settings: {
+          slidesToShow: 1,
         },
       },
     ],
