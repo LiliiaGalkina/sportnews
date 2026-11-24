@@ -1386,3 +1386,277 @@ body {
     grid-auto-columns: 100%;
   }
 }
+.third-slider {
+  padding: 0 0 8rem;
+}
+
+.slider-americen-football {
+  position: relative;
+}
+.slider-americen-football .slick-slider {
+  float: none;
+  height: auto;
+}
+
+.item-slider-americen-football {
+  border-radius: 0.6rem;
+  background-color: #ebeef3;
+}
+.item-slider-americen-football__link {
+  display: flex;
+  justify-content: space-between;
+  height: 38.5rem;
+  gap: 2rem;
+}
+.item-slider-americen-football__body {
+  flex: 0 1 55%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4.3rem;
+}
+.item-slider-americen-football__img {
+  flex: 0 1 44%;
+}
+.item-slider-americen-football__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.item-slider-americen-football__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 10.77rem;
+  height: 3.61rem;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 0.6rem;
+}
+.item-slider-americen-football__title {
+  font-family: "IBM Plex Serif", serif;
+  font-size: 6rem;
+  line-height: 0.94;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #262626;
+  background-image: linear-gradient(to bottom, #262626, #b8c2ce);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  max-width: 80%;
+}
+.item-slider-americen-football__form {
+  width: 80%;
+  display: flex;
+}
+.item-slider-americen-football__email {
+  width: 100%;
+  padding: 0 1.24rem;
+  font-size: 2.1rem;
+  border: 0.1rem solid #262626;
+  border-right: none;
+  border-radius: 0.6rem 0 0 0.6rem;
+  background-color: transparent;
+}
+.item-slider-americen-football__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 7.4rem;
+  height: 5.8rem;
+  background-color: #262626;
+  color: #ebeef3;
+  border-radius: 0.6rem;
+  border-radius: 0 0.6rem 0.6rem 0;
+}
+.item-slider-americen-football__button span {
+  font-size: 2.1rem;
+  transform: rotate(-45deg);
+}
+
+.slider-nav3 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+  margin-top: 4.3rem;
+}
+.slider-nav3 .slider-control__prev {
+  order: 1;
+}
+.slider-nav3 .slick-dots {
+  order: 2;
+}
+.slider-nav3 .slider-control__next {
+  order: 3;
+}
+
+.slider-control {
+  width: 7rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  border: none;
+  cursor: pointer;
+  background-color: #262626;
+  color: #ffffff;
+  border-radius: 0.3rem;
+}
+.slider-control__prev, .slider-control__next {
+  transition: background-color 0.5s ease;
+}
+.slider-control__prev:not(.slick-disabled):hover, .slider-control__next:not(.slick-disabled):hover {
+  background-color: #696868;
+}
+.slider-control.slick-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.slick-dots {
+  display: flex !important;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  transition: color 0.5s ease, transform 0.5s ease, background-color 0.5s ease;
+}
+
+.slick-dots li button {
+  font-size: 2rem;
+  line-height: 1;
+  border: 0;
+  background: transparent;
+  color: #262626;
+  cursor: pointer;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick-dots li.slick-active button {
+  background: #262626;
+  color: #ffffff;
+}
+
+.slick-dots li:not(.slick-active) button:hover {
+  background-color: #696868;
+  color: #ffffff;
+  transform: scale(1.15);
+}
+
+@media (max-width: 1200px) {
+  .item-slider-americen-football__title {
+    font-family: "IBM Plex Serif", serif;
+    font-size: 5.4rem;
+    line-height: 0.94;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #262626;
+    background-image: linear-gradient(to bottom, #262626, #b8c2ce);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+@media (max-width: 1024px) {
+  .item-slider-americen-football__link {
+    height: 32rem;
+  }
+  .item-slider-americen-football__body {
+    flex: 0 1 50%;
+    gap: 2rem;
+  }
+  .item-slider-americen-football__img {
+    flex: 0 1 50%;
+  }
+  .item-slider-americen-football__title {
+    font-family: "IBM Plex Serif", serif;
+    font-size: 3.6rem;
+    line-height: 0.94;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #262626;
+    background-image: linear-gradient(to bottom, #262626, #b8c2ce);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+@media (max-width: 768px) {
+  .item-slider-americen-football__link {
+    height: 28rem;
+  }
+  .item-slider-americen-football__title {
+    font-family: "IBM Plex Serif", serif;
+    font-size: 3.4rem;
+    line-height: 0.94;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #262626;
+    background-image: linear-gradient(to bottom, #262626, #b8c2ce);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    max-width: 96%;
+  }
+  .item-slider-americen-football__form {
+    width: 96%;
+  }
+}
+@media (max-width: 600px) {
+  .item-slider-americen-football {
+    position: relative;
+  }
+  .item-slider-americen-football__body {
+    flex: 0 1 99%;
+    z-index: 2;
+  }
+  .item-slider-americen-football__img {
+    flex: 0 1 0.1rem;
+  }
+  .item-slider-americen-football__img img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    filter: brightness(60%);
+    opacity: 0.2;
+  }
+  .item-slider-americen-football__email {
+    background-color: #ebeef3;
+  }
+}
+@media (max-width: 480px) {
+  .item-slider-americen-football__title {
+    max-width: 96%;
+  }
+  .item-slider-americen-football__form {
+    width: 98%;
+  }
+}
+@media (max-width: 375px) {
+  .item-slider-americen-football__title {
+    font-family: "IBM Plex Serif", serif;
+    font-size: 2.8rem;
+    line-height: 0.94;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #262626;
+    background-image: linear-gradient(to bottom, #262626, #b8c2ce);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

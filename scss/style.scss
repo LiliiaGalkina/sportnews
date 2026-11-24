@@ -1364,15 +1364,15 @@ body {
 
 //second-slider
 .second-slider {
-	margin-bottom: 8rem;
+  margin-bottom: 8rem;
 }
 
 .slider-articles {
   .slick-track {
     display: grid;
-   width: 100% !important; 
+    width: 100% !important;
     grid-auto-flow: column;
-    grid-auto-columns: calc(100% / 3); 
+    grid-auto-columns: calc(100% / 3);
   }
   .slick-list {
     margin: 0 -1.5rem;
@@ -1464,26 +1464,282 @@ body {
 }
 
 @media (max-width: 1024px) {
-	.item-slider-articles {
-		  &__title {
-    @include section-title(1.8rem, 0);
-
+  .item-slider-articles {
+    &__title {
+      @include section-title(1.8rem, 0);
+    }
   }
-	}
 }
 
 @media (max-width: 768px) {
-	.slider-articles {
-		.slick-track {
-			  grid-auto-columns: calc(100% / 2);
-		}
-	}
+  .slider-articles {
+    .slick-track {
+      grid-auto-columns: calc(100% / 2);
+    }
+  }
 }
 
 @media (max-width: 541px) {
-		.slider-articles {
-		.slick-track {
-			  grid-auto-columns: 100%;
+  .slider-articles {
+    .slick-track {
+      grid-auto-columns: 100%;
+    }
+  }
+}
+
+//third-slider
+
+.third-slider {
+  padding: 0 0 8rem;
+}
+
+.slider-americen-football {
+  position: relative;
+  .slick-slider {
+    float: none;
+    height: auto;
+  }
+}
+
+.item-slider-americen-football {
+  border-radius: 0.6rem;
+  background-color: $greyBackground;
+
+  // .item-slider-football__link
+
+  &__link {
+    display: flex;
+    justify-content: space-between;
+    height: 38.5rem;
+    gap: 2rem;
+  }
+
+  &__body {
+    flex: 0 1 55%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4.3rem;
+  }
+
+  // .item-slider-football__img
+
+  &__img {
+    flex: 0 1 44%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // .item-slider-football__button
+
+  &__button {
+    @include button(10.77rem, 3.61rem, transparent, #fff);
+  }
+
+  &__title {
+    @include title-gradient(6rem);
+    max-width: 80%;
+  }
+
+  &__form {
+    width: 80%;
+    display: flex;
+  }
+
+  &__email {
+    width: 100%;
+    padding: 0 1.24rem;
+    font-size: 2.1rem;
+    border: 0.1rem solid $blackText;
+    border-right: none;
+    border-radius: 0.6rem 0 0 0.6rem;
+    background-color: transparent;
+  }
+
+  &__button {
+    @include button(7.4rem, 5.8rem, $blackText, $greyBackground);
+    border-radius: 0 0.6rem 0.6rem 0;
+    span {
+      font-size: 2.1rem;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.slider-nav3 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+  margin-top: 4.3rem;
+
+  .slider-control__prev {
+    order: 1;
+  }
+
+  .slick-dots {
+    order: 2;
+  }
+
+  .slider-control__next {
+    order: 3;
+  }
+}
+
+.slider-control {
+  width: 7rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  border: none;
+  cursor: pointer;
+  background-color: $blackText;
+  color: $whiteText;
+  border-radius: 0.3rem;
+
+  &__prev,
+  &__next {
+    transition: background-color 0.5s ease;
+  }
+
+  &__prev:not(.slick-disabled):hover,
+  &__next:not(.slick-disabled):hover {
+    background-color: $middleGreyText;
+  }
+
+  &.slick-disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+
+.slick-dots {
+  display: flex !important;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  transition:
+    color 0.5s ease,
+    transform 0.5s ease,
+    background-color 0.5s ease;
+}
+
+.slick-dots li button {
+  font-size: 2rem;
+  line-height: 1;
+  border: 0;
+  background: transparent;
+  color: $blackText;
+  cursor: pointer;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick-dots li.slick-active button {
+  background: $blackText;
+  color: $whiteText;
+}
+
+.slick-dots li:not(.slick-active) button:hover {
+  background-color: $middleGreyText;
+  color: $whiteText;
+  transform: scale(1.15);
+}
+
+@media (max-width: 1200px) {
+  .item-slider-americen-football {
+    &__title {
+      @include title-gradient(5.4rem);
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .item-slider-americen-football {
+    &__link {
+      height: 32rem;
+    }
+    &__body {
+      flex: 0 1 50%;
+      gap: 2rem;
+    }
+    &__img {
+      flex: 0 1 50%;
+    }
+    &__title {
+      @include title-gradient(3.6rem);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .item-slider-americen-football {
+    &__link {
+      height: 28rem;
+    }
+
+    &__title {
+      @include title-gradient(3.4rem);
+      max-width: 96%;
+    }
+    &__form {
+      width: 96%;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+	 .item-slider-americen-football {
+			position: relative;
+		&__body {
+			flex: 0 1 99%;
+			z-index: 2;
 		}
-	}
+		&__img {
+			flex: 0 1 0.1rem;
+		
+			img {
+				position: absolute;
+				top: 0;
+				right: 0;
+				filter: brightness(60%);
+				opacity: 0.2;
+			}
+		}
+		&__email {
+			background-color: $greyBackground;
+		}
+	 }
+}
+
+@media (max-width: 480px) {
+	 .item-slider-americen-football {
+		&__title {
+			 max-width: 96%;
+		}
+		&__form {
+			width: 98%;
+		}
+	 }
+}
+
+@media (max-width: 375px) {
+	 .item-slider-americen-football {
+		&__title {
+			  @include title-gradient(2.8rem);
+		}
+	 }
 }
