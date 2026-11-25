@@ -48,6 +48,72 @@ body {
   line-height: 135%;
 }
 
+.slider-nav, .slider-nav3, .slider-nav2 {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.slider-control {
+  width: 7rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  border: none;
+  cursor: pointer;
+  background-color: #262626;
+  color: #ffffff;
+  border-radius: 0.3rem;
+}
+.slider-control__prev, .slider-control__next {
+  transition: background-color 0.5s ease;
+}
+.slider-control__prev:not(.slick-disabled):hover, .slider-control__next:not(.slick-disabled):hover {
+  background-color: #696868;
+}
+.slider-control.slick-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.slick-dots {
+  display: flex !important;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  transition: color 0.5s ease, transform 0.5s ease, background-color 0.5s ease;
+}
+
+.slick-dots li button {
+  font-size: 2rem;
+  line-height: 1;
+  border: 0;
+  background: transparent;
+  color: #262626;
+  cursor: pointer;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick-dots li.slick-active button {
+  background: #262626;
+  color: #ffffff;
+}
+
+.slick-dots li:not(.slick-active) button:hover {
+  background-color: #696868;
+  color: #ffffff;
+  transform: scale(1.15);
+}
+
 .header {
   padding: 2.3rem 0 2.7rem;
   display: flex;
@@ -74,6 +140,15 @@ body {
   background-color: #b8c2ce;
   color: #ffffff;
   border-radius: 0.6rem;
+  transition: opacity 0.5s ease, translate 0.5s ease;
+}
+.header__button:hover {
+  opacity: 0.8;
+}
+.header__button:active {
+  transform: translateY(0.05rem);
+}
+.header__button {
   display: flex;
   align-items: center;
   gap: 1.2rem;
@@ -249,7 +324,7 @@ body {
 }
 .hero__title {
   font-family: "IBM Plex Serif", serif;
-  font-size: 8rem;
+  font-size: 6.8rem;
   line-height: 0.94;
   font-weight: 700;
   text-transform: uppercase;
@@ -258,7 +333,7 @@ body {
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
-  max-width: 47rem;
+  max-width: 53rem;
 }
 .hero__info-link {
   max-width: 36.5rem;
@@ -274,11 +349,11 @@ body {
 }
 .hero__main-img {
   position: absolute;
-  right: 0;
+  right: 1rem;
   top: 50%;
   transform: translateY(-50%);
-  width: 79%;
-  width: clamp(22rem, 79%, 120rem);
+  width: 75%;
+  width: clamp(22rem, 75%, 120rem);
 }
 
 .info-link__text {
@@ -295,6 +370,15 @@ body {
   background-color: #262626;
   color: #e1e8f0;
   border-radius: 0.6rem;
+  transition: opacity 0.5s ease, translate 0.5s ease;
+}
+.info-link__button:hover {
+  opacity: 0.8;
+}
+.info-link__button:active {
+  transform: translateY(0.05rem);
+}
+.info-link__button {
   font-size: 2rem;
   text-transform: uppercase;
 }
@@ -360,6 +444,9 @@ body {
     flex: 0 1 100%;
     flex-direction: row;
   }
+  .hero__main-img {
+    transform: translateY(-52%);
+  }
   .card-hero {
     width: 47%;
   }
@@ -387,7 +474,7 @@ body {
 }
 @media (max-width: 768px) {
   .hero {
-    padding: 6rem 0 0;
+    padding: 5rem 0 0;
   }
   .hero__title {
     font-family: "IBM Plex Serif", serif;
@@ -417,6 +504,7 @@ body {
   .hero__main-img {
     width: 100%;
     width: clamp(22rem, 100%, 120rem);
+    top: 55%;
   }
   .right-hero__title {
     width: 100%;
@@ -500,6 +588,15 @@ body {
     background-color: #262626;
     color: #e1e8f0;
     border-radius: 0.6rem;
+    transition: opacity 0.5s ease, translate 0.5s ease;
+  }
+  .info-link__button:hover {
+    opacity: 0.8;
+  }
+  .info-link__button:active {
+    transform: translateY(0.05rem);
+  }
+  .info-link__button {
     font-size: 1.8rem;
   }
 }
@@ -558,6 +655,7 @@ body {
 }
 @media (max-width: 480px) {
   .category__items {
+    max-width: 35rem;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: 4rem;
@@ -584,6 +682,11 @@ body {
     order: 2;
   }
 }
+@media (max-width: 375px) {
+  .category__items {
+    max-width: 30rem;
+  }
+}
 .trending {
   display: flex;
   border-radius: 0.6rem;
@@ -608,6 +711,10 @@ body {
   display: flex;
   align-items: center;
   gap: 2rem;
+  transition: transform 0.5s ease;
+}
+.card-trending:hover {
+  transform: scale(1.05);
 }
 .card-trending__img {
   flex: 0 0 40%;
@@ -658,6 +765,15 @@ body {
   background-color: transparent;
   color: #fff;
   border-radius: 0.6rem;
+  transition: opacity 0.5s ease, translate 0.5s ease;
+}
+.img-trending__button:hover {
+  opacity: 0.8;
+}
+.img-trending__button:active {
+  transform: translateY(0.05rem);
+}
+.img-trending__button {
   font-size: 2rem;
   line-height: 100%;
   border: 0.1rem solid #ebeef3;
@@ -815,6 +931,15 @@ body {
   background-color: transparent;
   color: #fff;
   border-radius: 0.6rem;
+  transition: opacity 0.5s ease, translate 0.5s ease;
+}
+.item-slider-football__button:hover {
+  opacity: 0.8;
+}
+.item-slider-football__button:active {
+  transform: translateY(0.05rem);
+}
+.item-slider-football__button {
   position: absolute;
   top: 3.1rem;
   left: 4.8rem;
@@ -857,81 +982,18 @@ body {
   overflow: hidden;
 }
 
-.slider-nav {
-  display: flex;
-  align-items: center;
+.slider-nav, .slider-nav3, .slider-nav2 {
   justify-content: flex-end;
-  gap: 2rem;
   margin-top: 2.5rem;
 }
-.slider-nav .slider-control__prev {
+.slider-nav .slider-control__prev, .slider-nav3 .slider-control__prev, .slider-nav2 .slider-control__prev {
   order: 1;
 }
-.slider-nav .slick-dots {
+.slider-nav .slick-dots, .slider-nav3 .slick-dots, .slider-nav2 .slick-dots {
   order: 2;
 }
-.slider-nav .slider-control__next {
+.slider-nav .slider-control__next, .slider-nav3 .slider-control__next, .slider-nav2 .slider-control__next {
   order: 3;
-}
-
-.slider-control {
-  width: 7rem;
-  height: 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.4rem;
-  border: none;
-  cursor: pointer;
-  background-color: #262626;
-  color: #ffffff;
-  border-radius: 0.3rem;
-}
-.slider-control__prev, .slider-control__next {
-  transition: background-color 0.5s ease;
-}
-.slider-control__prev:not(.slick-disabled):hover, .slider-control__next:not(.slick-disabled):hover {
-  background-color: #696868;
-}
-.slider-control.slick-disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-.slick-dots {
-  display: flex !important;
-  justify-content: center;
-  gap: 2rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  transition: color 0.5s ease, transform 0.5s ease, background-color 0.5s ease;
-}
-
-.slick-dots li button {
-  font-size: 2rem;
-  line-height: 1;
-  border: 0;
-  background: transparent;
-  color: #262626;
-  cursor: pointer;
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.slick-dots li.slick-active button {
-  background: #262626;
-  color: #ffffff;
-}
-
-.slick-dots li:not(.slick-active) button:hover {
-  background-color: #696868;
-  color: #ffffff;
-  transform: scale(1.15);
 }
 
 @media (max-width: 1024px) {
@@ -995,7 +1057,7 @@ body {
   .item-slider-football__text {
     font-size: 1.6rem;
   }
-  .slider-nav {
+  .slider-nav, .slider-nav3, .slider-nav2 {
     justify-content: space-between;
   }
 }
@@ -1090,11 +1152,20 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 8rem;
-  height: 2.8rem;
+  width: 9rem;
+  height: 3rem;
   background-color: #b8c2ce;
   color: #ffffff;
   border-radius: 0.6rem;
+  transition: opacity 0.5s ease, translate 0.5s ease;
+}
+.news-cards__button:hover {
+  opacity: 0.8;
+}
+.news-cards__button:active {
+  transform: translateY(0.05rem);
+}
+.news-cards__button {
   margin: 0 auto;
   transition: transform 0.5s ease;
 }
@@ -1296,6 +1367,7 @@ body {
   gap: 2rem;
   cursor: pointer;
   border-radius: 0.6rem;
+  color: #262626;
   transition: transform 0.5s ease;
 }
 .item-slider-articles:hover {
@@ -1320,6 +1392,15 @@ body {
   background-color: transparent;
   color: #ebeef3;
   border-radius: 0.6rem;
+  transition: opacity 0.5s ease, translate 0.5s ease;
+}
+.item-slider-articles__button:hover {
+  opacity: 0.8;
+}
+.item-slider-articles__button:active {
+  transform: translateY(0.05rem);
+}
+.item-slider-articles__button {
   position: absolute;
   top: 1.4rem;
   right: 1.4rem;
@@ -1361,10 +1442,7 @@ body {
 }
 
 .slider-nav2 {
-  display: flex;
-  align-items: center;
   justify-content: flex-start;
-  gap: 2rem;
   margin-top: 2.5rem;
 }
 
@@ -1388,14 +1466,6 @@ body {
 }
 .third-slider {
   padding: 0 0 8rem;
-}
-
-.slider-americen-football {
-  position: relative;
-}
-.slider-americen-football .slick-slider {
-  float: none;
-  height: auto;
 }
 
 .item-slider-americen-football {
@@ -1436,6 +1506,13 @@ body {
   background-color: transparent;
   color: #fff;
   border-radius: 0.6rem;
+  transition: opacity 0.5s ease, translate 0.5s ease;
+}
+.item-slider-americen-football__button:hover {
+  opacity: 0.8;
+}
+.item-slider-americen-football__button:active {
+  transform: translateY(0.05rem);
 }
 .item-slider-americen-football__title {
   font-family: "IBM Plex Serif", serif;
@@ -1473,7 +1550,20 @@ body {
   background-color: #262626;
   color: #ebeef3;
   border-radius: 0.6rem;
+  transition: opacity 0.5s ease, translate 0.5s ease;
+}
+.item-slider-americen-football__button:hover {
+  opacity: 0.8;
+}
+.item-slider-americen-football__button:active {
+  transform: translateY(0.05rem);
+}
+.item-slider-americen-football__button {
   border-radius: 0 0.6rem 0.6rem 0;
+  transition: background-color 0.5s ease;
+}
+.item-slider-americen-football__button:hover {
+  background-color: #696868;
 }
 .item-slider-americen-football__button span {
   font-size: 2.1rem;
@@ -1481,10 +1571,7 @@ body {
 }
 
 .slider-nav3 {
-  display: flex;
-  align-items: center;
   justify-content: flex-end;
-  gap: 2rem;
   margin-top: 4.3rem;
 }
 .slider-nav3 .slider-control__prev {
@@ -1495,66 +1582,6 @@ body {
 }
 .slider-nav3 .slider-control__next {
   order: 3;
-}
-
-.slider-control {
-  width: 7rem;
-  height: 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.4rem;
-  border: none;
-  cursor: pointer;
-  background-color: #262626;
-  color: #ffffff;
-  border-radius: 0.3rem;
-}
-.slider-control__prev, .slider-control__next {
-  transition: background-color 0.5s ease;
-}
-.slider-control__prev:not(.slick-disabled):hover, .slider-control__next:not(.slick-disabled):hover {
-  background-color: #696868;
-}
-.slider-control.slick-disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-.slick-dots {
-  display: flex !important;
-  justify-content: center;
-  gap: 2rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  transition: color 0.5s ease, transform 0.5s ease, background-color 0.5s ease;
-}
-
-.slick-dots li button {
-  font-size: 2rem;
-  line-height: 1;
-  border: 0;
-  background: transparent;
-  color: #262626;
-  cursor: pointer;
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.slick-dots li.slick-active button {
-  background: #262626;
-  color: #ffffff;
-}
-
-.slick-dots li:not(.slick-active) button:hover {
-  background-color: #696868;
-  color: #ffffff;
-  transform: scale(1.15);
 }
 
 @media (max-width: 1200px) {
@@ -1633,6 +1660,7 @@ body {
     right: 0;
     filter: brightness(60%);
     opacity: 0.2;
+    z-index: 1;
   }
   .item-slider-americen-football__email {
     background-color: #ebeef3;
