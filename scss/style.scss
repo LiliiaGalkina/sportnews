@@ -49,6 +49,8 @@ $middleGreyText: #696868;
 $greyBackground: #ebeef3;
 $lightGreyBackground: #bab8b8;
 $blackTextName: #3e3232;
+$recentGradientFirst: #b2906e;
+$recentGradientSecond: #e4c599;
 
 //миксины
 @mixin button($width, $height, $background, $color) {
@@ -603,9 +605,9 @@ body {
   }
 }
 
-@media (max-width: 376px) {
+@media (max-width: 375px) {
   .hero {
-    padding: 4rem 0 0;
+    padding: 3rem 0 0;
     &__left {
       min-height: 50rem;
     }
@@ -616,7 +618,7 @@ body {
       top: -3.5rem;
     }
     &__main-img {
-      transform: translateY(-70%);
+      transform: translateY(-79%);
     }
     &__info-link {
       max-width: 26rem;
@@ -800,6 +802,11 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding: 3rem 3.6rem;
+  transition: opacity 0.5s ease;
+  
+  &:hover {
+	opacity: 0.8;
+  }
   // .img-trending__button
 
   &__button {
@@ -928,6 +935,8 @@ body {
 
 .slider-football {
   position: relative;
+  border-radius: 0.6rem;
+  overflow: hidden;
   .slick-slider {
     float: none;
     height: auto;
@@ -1157,7 +1166,7 @@ body {
     width: 100%;
     padding: 1.6rem 1.8rem;
     color: $greyBackground;
-    background: linear-gradient(to right, #b2906e, #e4c599);
+    background: linear-gradient(to right, $recentGradientFirst, $recentGradientSecond);
   }
 }
 
@@ -1438,10 +1447,11 @@ body {
   // .item-slider-articles__button
 
   &__button {
-    @include button(7.6rem, 2.8rem, transparent, $greyBackground);
+    @include button(8.6rem, 2.8rem, transparent, $greyBackground);
     position: absolute;
     top: 1.4rem;
     right: 1.4rem;
+	padding: 0.5rem;
     border: 0.1rem solid $greyBackground;
   }
 
@@ -1658,13 +1668,16 @@ body {
   .item-slider-americen-football {
     position: relative;
 
-	
+	&__link {
+		gap: 0;
+	}
+
     &__body {
       flex: 0 1 99%;
       z-index: 2;
     }
     &__img {
-      flex: 0 1 0.1rem;
+      flex: 0 1 0.01rem;
 
       img {
         position: absolute;
@@ -1718,9 +1731,13 @@ body {
 			height: 4.4rem;
 			background-color: $blackText;
 			border-radius: 0.6rem;
+			transition: box-shadow 0.5s ease;
 			img {
 				width: 100%;
 				height: 100%;
+			}
+			&:hover {
+				box-shadow: 0 0 1rem $blackText;
 			}
 		}
 }
